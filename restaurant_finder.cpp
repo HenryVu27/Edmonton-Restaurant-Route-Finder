@@ -1,9 +1,3 @@
-// Name: Dung Vu, Ahmed Refik
-// ID:
-// CMPUT 275 Winter 2020
-//
-// Assignment #1 Part 2: Restaurant Finder
-
 #include <Arduino.h>
 #include <TouchScreen.h>
 // core graphics library (written by Adafruit)
