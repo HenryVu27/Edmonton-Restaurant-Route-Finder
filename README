@@ -1,0 +1,48 @@
+Names: Dung Vu, Ahmed Refik
+ID:
+CMPUT 275, Winter 2020
+
+Assignment 1: Restaurant Finder (Part 1)
+
+Included Files:
+	* a1part1.cpp
+	* lcd_image.h
+	* lcd_image.cpp
+	* Makefile
+
+Accessories:
+	* Arduino Mega Board (AMG)
+	* A-B style USB
+	* TFT 3.5" (480x320) Display for MEGA 2560
+	* Joystick
+	* Breadboard 
+	* Stylus
+
+Wiring Instruction:
+    * Arduino analog pin A8 <--> Joystick VRy
+	* Arduino analog pin A9 <--> Joystick VRx
+	* Arduino digital pin 53 <--> Joystick SW
+	* Arduino GND <--> Joystick GND
+	* Arduino 5V <--> Joystick 5V
+
+Running Instruction:
+	* Extract a1part1.cpp
+	* In directory a1part containing a1part.cpp, lcd_image.h, lcd_image.cpp, and a Makefile, use command "make upload && serial-mon" to upload the code to the arduino and view the serial monitor.
+
+Function Description:
+	* x_to_lon, y_to_lat, lon_to_x, lat_to_y: uses the map function to convert between longtitude/latitude of the restaurants and the x/y coordinates of the map.
+	* setup(): initilizes everything, then draws the middle patch of the map of Edmonton as well a cursor in the middle of the screen.
+	* redrawCursor(): draws a cursor in TFT_RED at coordinates cursorX/cursorY.
+	* manDist(): calculates the Manhattan distance from the current position of the cursor to the restaurants using lon_to_x and lat_to_y.
+	* swap(): swaps the memory address of a and b.
+	* isort(): takes a pointer to rest_dist[], then uses insertion sort to sort rest_dist[] so that the manhattan distances of the restaurants are in ascending order.
+	* newMap(): draws a patch of the Edmonton map whenever the cursor hit the edge of the display. This "scrolling" is clamped to the boundary of the map image itself.
+	* getRestaurantFast(): quickly reads the information of the restaurants from the SD card. This function is taken from Weekly Exercise #3.
+	* setting(): sets the text and background color of the restaurants to be displayed.
+	* mode1(): whenever the user presses the joystick button in Mode 0, the program will enter this mode and display the 21 restaurants closest the current cursor position. The user can use the joystick to move around in this menu to select a restaurant. The program is stuck in a while loop until the user presses the joystick again; pressing the joystick against will also return the index of the selected restaurant in rest_dist[].
+	* mode0(): A patch of the Edmonton map will be displayed on the screen. The user can use the joystick to move aroudn the entire Edmonton map. This function is partially completed in Weekly Exercise #1. The only difference is that it uses newMap() to move around the entire map.
+	* buttonClick(): this function is responsible for redrawing the patch with the selected restaurant at the center. It also takes care of the two boundary cases specified in the assignment description.
+	* drawRest(): draws all the restaurants that can be displayed on the screen.
+	* drawDot(): this function is used by drawRest() to draw a circle at the position of the restaurant specified in drawMap().
+	* main(): initializes setup() then enter Mode 0 which is in a while loop.
+
