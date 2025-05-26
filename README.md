@@ -8,7 +8,7 @@ This project implements an interactive restaurant finder for Edmonton on an Ardu
 *   **Restaurant Proximity Search:** Displays the 21 closest restaurants to the current cursor position based on Manhattan distance.
 *   **Restaurant Selection:** Select a restaurant from the list to view its location on the map.
 *   **Dynamic Map Rendering:** The map patch is redrawn as the cursor moves, providing a scrolling effect.
-*   **SD Card Integration:** Restaurant data is loaded efficiently from an SD card (though not explicitly mentioned, `getRestaurantFast` implies SD card usage for restaurant data, typical for Arduino projects with larger datasets).
+*   **SD Card Integration:** Restaurant data is loaded efficiently from an SD card
 
 ## Hardware Requirements
 
@@ -18,8 +18,7 @@ This project implements an interactive restaurant finder for Edmonton on an Ardu
 *   Joystick
 *   Breadboard
 *   Stylus (for TFT interaction, if applicable, though primary input seems to be joystick)
-*   SD Card Reader and SD Card (implied for `getRestaurantFast`)
-
+*   SD Card Reader and SD Card
 ## Wiring Instructions
 
 Connect the joystick to the Arduino Mega as follows:
